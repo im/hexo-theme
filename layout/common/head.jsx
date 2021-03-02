@@ -161,8 +161,8 @@ module.exports = class extends Component {
             <Plugins site={site} config={config} helper={helper} page={page} head={true} />
             {adsenseClientId ? <script data-ad-client={adsenseClientId}
                 src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" async></script> : null}
-            {widgetProfile.avatar_breathing ? <script src={url_for('/js/breathing-halftone.pkgd.js')} async></script> : null}
-            {widgetProfile.avatar_breathing ? <script src={url_for('/js/set_avatar.js')} async></script> : null}
+            {widgetProfile && widgetProfile.avatar_breathing ? <script src={url_for('/js/breathing-halftone.pkgd.js')} async></script> : null}
+            {widgetProfile && widgetProfile.avatar_breathing ? <script src={url_for('/js/set_avatar.js')} async></script> : null}
         </head>;
     }
 };

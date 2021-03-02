@@ -84,7 +84,6 @@ class Profile extends Component {
 Profile.Cacheable = cacheComponent(Profile, 'widget.profile', props => {
     const { site, helper, widget } = props;
     const {
-        avatar_breathing = false,
         avatar,
         gravatar,
         avatar_rounded = false,
