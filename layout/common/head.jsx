@@ -84,8 +84,10 @@ module.exports = class extends Component {
         }
 
         let adsenseClientId = null;
+        let widgetProfile = {}
         if (Array.isArray(config.widgets)) {
             const widget = config.widgets.find(widget => widget.type === 'adsense');
+            widgetProfile =  config.widgets.find(widget => widget.type === 'profile');
             if (widget) {
                 adsenseClientId = widget.client_id;
             }
@@ -157,9 +159,10 @@ module.exports = class extends Component {
             <link rel="stylesheet" href={fontCssUrl[variant]} />
             <link rel="stylesheet" href={url_for('/css/' + variant + '.css')} />
             <Plugins site={site} config={config} helper={helper} page={page} head={true} />
-
             {adsenseClientId ? <script data-ad-client={adsenseClientId}
                 src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" async></script> : null}
+            {widgetProfile.avatar_breathing ? <script src={url_for('/js/breathing-halftone.pkgd.js')} async></script> : null}
+            {widgetProfile.avatar_breathing ? <script src={url_for('/js/set_avatar.js')} async></script> : null}
         </head>;
     }
 };

@@ -142,6 +142,7 @@ for n in (0 .. 5)
  *          Image helpers
  * --------------------------------- */
 .image
+    overflow hidden
     &.is-7by3
         padding-top: 42.8%
 
@@ -157,6 +158,9 @@ for n in (0 .. 5)
         object-fit: cover
         border-radius: 50%
         overflow hidden
+        position absolute
+        left: 0
+        top 2px
 
     .fill
         object-fit: cover
