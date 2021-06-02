@@ -136,9 +136,9 @@
     }
     document.onkeydown = function(e) {
         const keyCode = e.keyCode || e.which || e.charCode;
-        const ctrlKey = e.ctrlKey ;
+        const ctrlKey = e.ctrlKey;
         console.log('ctrlKey: ', ctrlKey);
-        if(ctrlKey && keyCode == 75) {
+        if (ctrlKey && keyCode === 75) {
             $('.navbar-item.search').click();
             e.preventDefault();
             return false;
